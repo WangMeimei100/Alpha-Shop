@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alpha-Shop</title>
+  <link rel="stylesheet" href="dist/main.css">
+
+</head>
+<body>
+  <div id="main-app">
+    <nav class="nav-container">
+      <label class="nav-container__navbar-toggle-label cursor-pointer" for="navbar-toggle">
+        <span class="hamburger"></span>
+      </label>
+      <input type="checkbox" class="nav-container__navbar-toggle" id="navbar-toggle" />
+      <div class="menu-container">
+        <div class="menu">
+          <ul class="nav-list d-flex justify-content-start align-items-center">
+            <li class="nav-item">
+              <a class="nav-link" href="#boy">男款</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#girl">女款</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#latest_news">最新消息</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#Customized＿goods">客製商品</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact_us">聯絡我們</a>
+            </li>
+          </ul>
+        </div>
+        <div class="icons">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <i class="fa-solid fa-cart-shopping"></i>
+          <i class="fa-regular fa-moon mode"></i>
+        </div>
+      </div>
+      <div class="logo cursor-pointer">
+        <img class="navbar-brand" src="/src/pictures/Logo@2x.png" alt="ALPHA Shop Logo">
+      </div>
+    </nav>
+
+    <main>
+      <!-- stepper   -->
+      <section class="stepper">
+        <h3 class="stepper__title">
+          結帳
+        </h3>
+        <div class="stepper__wrapper d-flex justify-content-between align-items-center">
+          <div class="stepper__wrapper__step active">
+            <span class="stepper__wrapper__step__circle"></span>
+            <span class="stepper__wrapper__step__description">寄送地址</span>
+            <span class="stepper__wrapper__step__line"></span>
+          </div>
+          <div class="stepper__wrapper__step">
+            <span class="stepper__wrapper__step__circle"></span>
+            <span class="stepper__wrapper__step__description">運送方式</span>
+            <span class="stepper__wrapper__step__line"></span>
+          </div>
+          <div class="stepper__wrapper__step">
+            <span class="stepper__wrapper__step__circle"></span>
+            <span class="stepper__wrapper__step__description">付款資訊</span>
+          </div>
+        </div>
+      </section>
+      <!-- form -->
+      <section class="form-panel">
+        <div class="part delivery-address">
+          <h3>寄送地址</h3>
+          <form action="" class="a-form">
+            <div class="form-row d-flex">
+              <div class="form-group gender-and-name">
+                <div class="form-group gender">
+                  <label class="form-group__label">稱謂: </label>
+                  <select name="gender">
+                    <option value="">--Please select gender--</option>
+                    <option value="men">男士</option>
+                    <option value="Ms.">女士</option>
+                  </select>
+                </div>
+                <div class="form-group name">
+                  <label class="form-group__label">姓名：</label>
+                  <input type="text" placeholder="請輸入姓名">
+                </div>
+              </div>
+  
+              <div class="form-group phone">
+                <label class="form-group__label">電話：
+  
+                </label>
+                <input type="text" placeholder="請輸入電話">
+              </div>
+              <div class="form-group email">
+                <label class="form-group__label">e-mail：
+                </label>
+                <input type="text" placeholder="請輸入電子信箱">
+              </div>
+              <div class="form-group city">
+                <label class="form-group__label">縣市:
+                </label>
+                <select name="city">
+                  <!--    render city   -->
+                </select>
+              </div>
+              <div class="form-group address">
+                <label class="form-group__label">地址：
+                </label>
+                <input type="text" placeholder="請輸入地址">
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="part shipping-method d-none">
+          <h3>運送方式</h3>
+          <form action="" class="a-form">
+            <div class="form-row">
+              <div class="form-group standard shipping-active">
+        
+                <label for="standard" class="form-group__label px-5 h-100">
+                  <input type="radio" name="shipping" id="standard" checked>
+                  <div class="d-flex justify-content-between w-100">
+                    <div class="transport">
+                      <span class="transport__method">
+                        標準運送
+                      </span>
+                      <span class="transport__time">
+                        約3~7個工作天
+                      </span>
+                    </div>
+                    <div class="fee">免費</div>
+                  </div>
+        
+                </label>
+              </div>
+              <div class="form-group dhl">
+                <label for="DHL" class="form-group__label px-5 h-100">
+                  <input type="radio" name="shipping" id="DHL">
+                  <div class="d-flex justify-content-between w-100">
+                    <div class="transport">
+                      <span class="transport__method">
+                        DHL運送
+                      </span>
+                      <span class="transport__time">
+                        48小時內送達
+                      </span>
+                    </div>
+                    <div class="fee">$500</div>
+                  </div>
+        
+                </label>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="part payment-information d-none">
+          <h3>付款資訊</h3>
+          <form action="" class="a-form">
+            <div class="form-row d-flex">
+              <div class="form-group card-owner">
+                <label for="" class="form-group__label">持卡人姓名：
+                </label>
+                <input type="text" placeholder="John Doe">
+              </div>
+              <div class="form-group card-number">
+                <label for="" class="form-group__label">卡號
+                </label>
+                <input type="text" placeholder="1111 2222 3333 4444">
+              </div>
+              <div class="form-group card-date">
+                <label for="" class="form-group__label">有效期限：</label>
+                <input type="text" placeholder="MM/YY">
+              </div>
+              <div class="form-group card-code">
+                <label for="" class="form-group__label">CVC/CCV：
+                </label>
+                <input type="text" placeholder="123">
+              </div>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <!--  cart   -->
+      <section class="cart mb-8">
+        <div class="cart-panel">
+          <div class="cart__items">
+            <!--     render cart items     -->
+          </div>
+          <div class="cart-panel__shipping-fee d-flex justify-content-between">
+            <span class="shipping-fee title">運費</span>
+            <span class="shipping-fee title-value">免運</span>
+          </div>
+          <div class="cart-panel__cart-total d-flex justify-content-between">
+            <span class="cart-total title">小計</span>
+            <span>$<span class="cart-total title-value">5298</span></span>
+          </div>
+        </div>
+      </section>
+      
+      <section class="control-button d-flex justify-content-between align-items-center mt-6 pt-6">
+        <button class="control-button__previous d-none"><i class="fa-solid fa-arrow-left-long"></i>上一步</button>
+        <button class="control-button__next">下一步<i class="fa-solid fa-arrow-right-long"></i></button>
+      </section>
+    </main>
+  
+    <!-- footer   -->
+    <footer class="footer-wrapper">
+      <div class="footer-wrapper__logo">
+        <img class="logo__image" src="/src/pictures/Logo@2x.png" alt="ALPHA Shop Logo">
+      </div>
+      <div class="footer-wrapper__content">
+        <section class="footer-wrapper__service ">
+          <span class="title">客戶服務</span>
+          <span>運送說明</span>
+          <span>退貨相關說明</span>
+          <span>付款資訊</span>
+          <span>FAQ</span>
+        </section>
+        <section class="footer-wrapper__about">
+          <span class="title">關於我們</span>
+          <span>品牌故事</span>
+          <span>媒體聯繫</span>
+          <span>Press kit</span>
+        </section>
+        <section class="footer-wrapper__term">
+          <span class="title">資訊</span>
+          <span>隱私權政策</span>
+          <span>Cookie</span>
+          <span>GDPR</span>
+        </section>
+        <section class="footer-wrapper__follow-us">
+          <span class="title">追蹤ALPHA Shop</span>
+          <span>+886 02123-45678</span>
+          <div class="social-media-icon">
+            <i class="fa-brands fa-facebook-f"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-whatsapp"></i>
+          </div>
+        </section>
+      </div>
+    </footer>
+  </div>
+  
+  <script src="dist/bundle.js"></script>
+  <script src="https://kit.fontawesome.com/45ed74307d.js" crossorigin="anonymous"></script>
+
+</body>
+</html>

@@ -1,0 +1,198 @@
+/* size setting */
+$sizes: (
+  25: 25%,
+  50: 50%,
+  75: 75%,
+  100: 100%
+);
+
+@each $abbrev,
+$prop in (w: width, h: height) {
+
+  @each $num,
+  $value in $sizes {
+    .#{$abbrev}-#{$num} {
+      #{$prop}: $value;
+    }
+  }
+}
+
+/* margin, padding setting  */
+$spacer: 1rem;
+$spacers: (
+  1: ($spacer * 0.25),
+  2: ($spacer * 0.5),
+  3: ($spacer * 0.75),
+  4: ($spacer * 1),
+  5: ($spacer * 1.25),
+  6: ($spacer * 1.5),
+  7: ($spacer * 1.75),
+  8: ($spacer * 2)
+);
+
+@each $abbrev,
+$prop in (m: margin, p: padding) {
+
+  @each $num,
+  $value in $spacers {
+    .#{$abbrev}-#{$num} {
+      #{$prop}: $value;
+    }
+
+    .#{$abbrev}t-#{$num} {
+      #{$prop}-top: $value;
+    }
+
+    .#{$abbrev}b-#{$num} {
+      #{$prop}-bottom: $value;
+    }
+
+    .#{$abbrev}l-#{$num} {
+      #{$prop}-left: $value;
+    }
+
+    .#{$abbrev}r-#{$num} {
+      #{$prop}-right: $value;
+    }
+
+    .#{$abbrev}x-#{$num} {
+      #{$prop}-right: $value;
+      #{$prop}-left: $value;
+    }
+
+    .#{$abbrev}y-#{$num} {
+      #{$prop}-top: $value;
+      #{$prop}-bottom: $value;
+    }
+  }
+}
+
+/* step number setting  */
+@mixin getStepNum($num) {
+  @for $i from 1 through $num {
+    &:nth-child(#{$i}) &__circle::after {
+      content: "#{$i}";
+    }
+  }
+}
+
+/* basic setting */
+$primary-color: #2a2a2a;
+$circle-text: #ffffff;
+$light-circle: #afb1bd;
+$dark-stepper-line: #000000;
+$light-stepper-line: #f0f0f5;
+$input-border: #4a4a4a;
+$label-text: #808080;
+$button-bg: #f67599;
+$footer-bg: #e5e5e5;
+
+%form-label {
+  font-size: 0.75rem;
+  color: $label-text;
+  font-weight: 700;
+  line-height: 1rem;
+  margin-bottom: 8px;
+}
+
+%input-style {
+  margin-bottom: 1.5rem;
+  height: 2.5rem;
+  padding-left: 1rem;
+  border: 1px solid $input-border;
+  border-radius: 5px;
+
+  &::placeholder {
+    color: #999999;
+  }
+}
+
+%shipping-input-style {
+  margin-bottom: 1.5rem;
+  height: 3.75rem;
+  border: 1px solid $light-stepper-line;
+  border-radius: 5px;
+  color: #000000;
+
+  &::click,
+  &::active {
+    color: $primary-color;
+  }
+}
+
+/* display setting & flex container setting*/
+.d-none {
+  display: none;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.d-block {
+  display: block;
+}
+
+.d-inline-block {
+  display: inline-block;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.justify-content-start {
+  justify-content: flex-start;
+}
+
+.justify-content-end {
+  justify-content: flex-end;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.justify-content-between {
+  justify-content: space-between;
+}
+
+.justify-content-around {
+  justify-content: space-around;
+}
+
+.align-content-start {
+  align-content: flex-start;
+}
+
+.align-content-end {
+  align-content: flex-end;
+}
+
+.align-content-center {
+  align-content: center;
+}
+
+.align-items-start {
+  align-items: flex-start;
+}
+
+.align-items-end {
+  align-items: flex-end;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
